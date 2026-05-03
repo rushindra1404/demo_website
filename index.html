@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sai Divya Dental Clinic | Advanced Digital Healthcare</title>
+
+    <!-- Design System Typography: Inter (Primary) & Poppins (Secondary) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animations CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind Configured to strict Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],     // Primary
+                        display: ['Poppins', 'sans-serif'] // Secondary
+                    },
+                    colors: {
+                        primary: '#0EA5E9',   // Cyan Blue
+                        secondary: '#22D3EE', // Light Aqua
+                        accent: '#38BDF8',    // Glow Accent
+                        surface: {
+                            light: '#F8FAFC', // Soft White
+                            dark: '#0F172A',  // Text contrast / Dark surface
+                            black: '#020617'  // Dark Mode BG
+                        }
+                    },
+                    fontSize: {
+                        'hero': ['clamp(56px, 5vw, 64px)', '1.1'],
+                        'section': ['clamp(28px, 3vw, 36px)', '1.3'],
+                        'sub': ['clamp(18px, 2vw, 22px)', '1.4'],
+                        'body': ['clamp(14px, 1.5vw, 16px)', '1.6'],
+                        'label': ['13px', '1.4'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'sweep': 'sweep 1.5s ease-in-out',
+                        'zoom-in': 'zoomIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(56,189,248,0.3)' },
+                            '50%': { boxShadow: '0 0 25px rgba(56,189,248,0.6)' },
+                        },
+                        sweep: {
+                            '0%': { transform: 'translateX(-150%) skewX(30deg)' },
+                            '100%': { transform: 'translateX(200%) skewX(30deg)' },
+                        },
+                        zoomIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="transition-colors duration-400">
+    <div id="scroll-progress"></div>
+    <div class="noise-bg"></div>
+
+    <!-- Loading Screen -->
+    <div id="page-loader">
+        <div class="loader-ring"></div>
+    </div>
+
+
+
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+
+    <!-- NAVBAR -->
+    <header
+        class="fixed top-0 w-full z-40 transition-all duration-300 py-4 glass-card !rounded-none !border-x-0 !border-t-0 shadow-sm"
+        id="smart-nav">
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center gap-4 group interactive-hover">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary/30 rounded-full blur-md group-hover:bg-primary/60 transition-all duration-300"></div>
+                        <img src="images/Gemini_Generated_Image_slolgkslolgkslol.png" alt="Sri Sai Divya Dental Clinic Logo"
+                            class="relative w-12 h-12 rounded-full object-cover shadow-[0_0_20px_rgba(14,165,233,0.5)] border-2 border-white/20 group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="hidden sm:flex flex-col justify-center">
+                        <span class="font-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent tracking-wide text-[22px] leading-tight drop-shadow-sm group-hover:drop-shadow-[0_0_10px_rgba(14,165,233,0.5)] transition-all duration-300">
+                            Sri Sai Divya
+                        </span>
+                        <span class="font-sans font-bold text-slate-500 dark:text-slate-400 text-[10px] tracking-[0.25em] uppercase -mt-0.5">
+                            Dental Clinic
+                        </span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#"
+                        class="text-body font-medium text-surface-dark dark:text-surface-light hover:text-primary transition-colors interactive-hover">Home</a>
+                    <a href="#about"
+                        class="text-body font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors interactive-hover">About
+                        Us</a>
+                    <a href="#services"
+                        class="text-body font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors interactive-hover">Procedures</a>
+                    <a href="#experts"
+                        class="text-body font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors interactive-hover">Meet Our Doctor</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleDarkMode()"
+                        class="w-10 h-10 rounded-full glass-card hover-lift flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-primary interactive-hover">
+                        <i class="fas fa-moon dark:hidden transition-transform"></i>
+                        <i class="fas fa-sun hidden dark:block transition-transform"></i>
+                    </button>
+                    <a href="#appointment" class="glow-btn !py-2.5 !px-6 text-label interactive-hover">
+                        Book Consult
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919493596930" target="_blank"
+        class="fixed bottom-6 left-6 w-14 h-14 glass-card flex items-center justify-center text-[#25D366] text-3xl shadow-[0_10px_25px_rgba(37,211,102,0.2)] hover:scale-110 transition-transform z-50 interactive-hover !rounded-full">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- FLOATING AI ASSISTANT REMOVED -->
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative pt-32 pb-24 lg:pt-40 lg:pb-0 overflow-hidden min-h-[90vh] lg:min-h-[95vh] flex items-center bg-gradient-to-br from-[#f8fafc] via-[#e0f2fe] to-[#f0f9ff] dark:from-slate-900 dark:via-slate-800 dark:to-slate-900" id="hero-section">
+        
+        <!-- Background Effects -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <!-- Radial glow left -->
+            <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-lighten opacity-70"></div>
+            <!-- Subtle abstract shapes -->
+            <div class="absolute top-20 right-20 w-72 h-72 bg-accent/10 rounded-full blur-[80px]"></div>
+            <div class="absolute bottom-10 left-1/2 w-96 h-96 bg-blue-300/20 rounded-full blur-[100px]"></div>
+            <!-- Gradient movement animation layer -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 dark:via-white/5 to-transparent animate-[pulseGlow_6s_ease-in-out_infinite]"></div>
+        </div>
+
+        <div class="container max-w-[1400px] mx-auto px-6 relative z-10 h-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 pt-10 lg:pt-0">
+            
+            <!-- LEFT SIDE: Doctor Image & Floating Elements -->
+            <div class="w-full lg:w-1/2 relative flex justify-center lg:justify-start items-end lg:items-center mt-12 lg:mt-0" id="hero-image-container">
+                <!-- Soft radial glow behind the doctor -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] z-0 rounded-full animate-[pulseGlow_4s_ease-in-out_infinite]" style="background: radial-gradient(circle at center, rgba(14,165,233,0.25), transparent 60%); filter: blur(20px);"></div>
+                
+                <!-- Doctor Image Container -->
+                <div class="relative w-[80%] max-w-[400px] lg:max-w-[500px] lg:w-full aspect-[4/5] lg:aspect-auto lg:h-[75vh] max-h-[700px] flex items-end justify-center z-10 translate-y-14 lg:translate-y-28 translate-x-6 lg:translate-x-16">
+                    <img src="images/hero%20section.png" alt="Dr. Divya" class="relative z-10 w-full h-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(14,165,233,0.2)] doctor-image" style="transform-origin: bottom center; animation: doctorEntrance 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, subtleFloat 5s ease-in-out infinite alternate;">
+                </div>
+
+                <!-- 💎 FLOATING BADGES -->
+                <!-- Combined Badge: Experience & Smiles (Near Shoulder - Right Side) -->
+                <div class="absolute top-[45%] -right-2 md:right-0 lg:-right-8 z-20 glass-card bg-white/70 dark:bg-slate-800/70 backdrop-blur-[10px] border border-white/50 dark:border-slate-700/50 p-2.5 lg:p-3 rounded-[20px] shadow-[0_10px_30px_rgba(14,165,233,0.15)] flex items-center gap-3 animate-[floatSlow_4.5s_ease-in-out_infinite] hover:scale-105 transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] hidden sm:flex cursor-default" style="animation-delay: 0s;">
+                    <div class="flex -space-x-3">
+                        <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-500 text-sm lg:text-base shadow-sm ring-2 ring-white dark:ring-slate-800 z-10 relative">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm lg:text-base shadow-sm ring-2 ring-white dark:ring-slate-800 z-0 relative">
+                            <i class="fas fa-smile-beam"></i>
+                        </div>
+                    </div>
+                    <div class="pr-2">
+                        <p class="text-surface-dark dark:text-surface-light font-bold text-xs lg:text-sm leading-tight">10+ Yrs & 5000+</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-[10px] lg:text-xs font-medium">Experience & Smiles</p>
+                    </div>
+                </div>
+
+                <!-- Rating Badge (Near Bottom/Left) -->
+                <div class="absolute bottom-[20%] left-2 md:-left-2 lg:left-4 z-20 glass-card bg-white/70 dark:bg-slate-800/70 backdrop-blur-[10px] border border-white/50 dark:border-slate-700/50 p-2.5 lg:p-3 rounded-[20px] shadow-[0_10px_30px_rgba(14,165,233,0.15)] flex items-center gap-2.5 animate-[floatSlow_5s_ease-in-out_infinite] hover:scale-105 transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] cursor-default" style="animation-delay: 0.8s;">
+                    <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-500 text-sm lg:text-base shadow-sm">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="pr-2">
+                        <p class="text-surface-dark dark:text-surface-light font-bold text-xs lg:text-sm leading-tight">4.9 Rating</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-[10px] lg:text-xs font-medium">Patient Score</p>
+                    </div>
+                </div>
+
+                <!-- 📍 FLOATING ICONS (Interactive) -->
+                <!-- Call Icon (Moved Right) -->
+                <!-- Call Icon (Just beside doctor - left side) -->
+                <a href="tel:+919493596930" class="absolute top-[20%] left-[52%] md:left-[55%] lg:left-[58%] z-20 w-12 h-12 lg:w-14 lg:h-14 glass-card bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/50 dark:border-slate-700/50 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.1)] flex items-center justify-center text-primary text-xl lg:text-2xl animate-[floatSlow_4s_ease-in-out_infinite] hover:scale-110 hover:shadow-[0_0_20px_rgba(14,165,233,0.5)] hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group" title="Call Now" style="animation-delay: 0.2s;">
+                    <i class="fas fa-phone-alt group-hover:animate-pulse"></i>
+                </a>
+
+                <!-- WhatsApp Icon (Left side of doctor) -->
+                <a href="https://wa.me/919493596930" target="_blank" class="absolute top-[50%] left-2 md:left-0 lg:-left-4 z-20 w-12 h-12 lg:w-14 lg:h-14 glass-card bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-white/50 dark:border-slate-700/50 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.1)] flex items-center justify-center text-[#25D366] text-xl lg:text-2xl animate-[floatSlow_4.8s_ease-in-out_infinite] hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all duration-300 group" title="WhatsApp Chat" style="animation-delay: 1.2s;">
+                    <i class="fab fa-whatsapp group-hover:animate-pulse"></i>
+                </a>
+            </div>
+
+            <!-- RIGHT SIDE: Text Content -->
+            <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left z-20 relative pb-20 lg:pb-0 -translate-y-4 lg:-translate-y-16" id="hero-content">
+                
+                <!-- Premium Label -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card bg-primary/10 border border-primary/20 text-primary text-xs lg:text-sm font-bold tracking-widest uppercase mb-4 shadow-sm hero-fade-slide-up" style="animation-delay: 0.1s;">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    #1 Dental Clinic in Gajapathinagaram
+                </div>
+
+                <!-- Brand Heading -->
+                <h1 class="font-display font-extrabold tracking-tight leading-[1.05] mb-3 hero-fade-slide-up" style="font-size: clamp(28px, 4.5vw, 56px); animation-delay: 0.2s;">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0EA5E9] to-[#22D3EE] drop-shadow-sm block pb-1">Sri Sai Divya</span>
+                    <span class="text-surface-dark dark:text-surface-light font-medium tracking-wide text-[0.45em] block mt-1 uppercase text-slate-500 dark:text-slate-400">Dental Clinic</span>
+                </h1>
+
+                <!-- Main Heading -->
+                <h2 class="text-[18px] sm:text-[22px] lg:text-[26px] font-bold text-surface-dark dark:text-surface-light leading-snug mb-5 hero-stagger" style="animation-delay: 0.3s;">
+                    Experience painless, modern dentistry crafted for your perfect smile.
+                </h2>
+
+                <!-- Feature Tags -->
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-10 hero-fade" style="animation-delay: 0.4s;">
+                    <span class="px-4 py-2 rounded-lg bg-white/60 dark:bg-slate-800/60 backdrop-blur-md shadow-sm border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-primary"></i> 100% Painless
+                    </span>
+                    <span class="px-4 py-2 rounded-lg bg-white/60 dark:bg-slate-800/60 backdrop-blur-md shadow-sm border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                        <i class="fas fa-user-md text-primary"></i> Expert Care
+                    </span>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto hero-scale-in" style="animation-delay: 0.7s;">
+                    <!-- Primary Button -->
+                    <a href="#appointment" class="w-full sm:w-auto px-8 py-4 lg:px-10 rounded-full bg-gradient-to-r from-[#0EA5E9] to-[#22D3EE] text-white font-bold text-lg shadow-[0_10px_25px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_rgba(14,165,233,0.5)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden group">
+                        <span class="relative z-10">Make an Appointment</span>
+                        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center relative z-10 group-hover:translate-x-1 transition-transform">
+                            <i class="fas fa-calendar-check text-sm"></i>
+                        </div>
+                    </a>
+
+                    <!-- Secondary Button -->
+                    <a href="tel:+919493596930" class="w-full sm:w-auto px-8 py-4 lg:px-10 rounded-full glass-card bg-white/80 dark:bg-slate-800/80 text-surface-dark dark:text-surface-light font-bold text-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-[0_15px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 flex items-center justify-center gap-3 group">
+                        <span>Call Now</span>
+                        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i class="fas fa-phone-alt text-sm"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Bottom Curve/Wave -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+            <svg class="relative block w-full h-[40px] lg:h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.93,121.5,193.3,114.7,236.4,110,280.24,93.4,321.39,56.44Z" class="fill-white dark:fill-surface-black"></path>
+            </svg>
+        </div>
+
+        <style>
+            @keyframes doctorEntrance {
+                0% { opacity: 0; transform: scale(0.9) translateY(40px); }
+                100% { opacity: 1; transform: scale(1) translateY(0); }
+            }
+            @keyframes subtleFloat {
+                0% { transform: translateY(0); }
+                100% { transform: translateY(-15px); }
+            }
+            @keyframes floatSlow {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            .hero-fade-slide-up {
+                opacity: 0;
+                animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+            .hero-stagger {
+                opacity: 0;
+                animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+            .hero-fade {
+                opacity: 0;
+                animation: smoothFade 1s ease forwards;
+            }
+            .hero-scale-in {
+                opacity: 0;
+                transform: scale(0.95);
+                animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+            @keyframes fadeSlideUp {
+                0% { opacity: 0; transform: translateY(30px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes smoothFade {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @keyframes scaleIn {
+                0% { opacity: 0; transform: scale(0.95); }
+                100% { opacity: 1; transform: scale(1); }
+            }
+            
+            /* Parallax Effect setup */
+            .hero-parallax-wrapper {
+                perspective: 1000px;
+            }
+        </style>
+        
+        <script>
+            // Slight Parallax on mouse movement
+            document.addEventListener('DOMContentLoaded', () => {
+                const heroSection = document.getElementById('hero-section');
+                const imageContainer = document.getElementById('hero-image-container');
+                const contentContainer = document.getElementById('hero-content');
+                
+                if(heroSection && imageContainer && contentContainer && window.innerWidth > 1024) {
+                    heroSection.addEventListener('mousemove', (e) => {
+                        const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+                        const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+                        
+                        imageContainer.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
+                        contentContainer.style.transform = `translate(${xAxis * -0.5}px, ${yAxis * -0.5}px)`;
+                    });
+                    
+                    heroSection.addEventListener('mouseleave', () => {
+                        imageContainer.style.transform = `translate(0px, 0px)`;
+                        imageContainer.style.transition = `transform 0.5s ease`;
+                        contentContainer.style.transform = `translate(0px, 0px)`;
+                        contentContainer.style.transition = `transform 0.5s ease`;
+                        
+                        setTimeout(() => {
+                            imageContainer.style.transition = ``;
+                            contentContainer.style.transition = ``;
+                        }, 500);
+                    });
+                }
+            });
+        </script>
+    </section>
+
+    <!-- 1.5 WELCOME SECTION -->
+    <section id="welcome" class="py-24 md:py-32 bg-white dark:bg-surface-black relative z-10 overflow-hidden border-y border-slate-100 dark:border-slate-800">
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- Left: Clinic Image with offset background -->
+                <div class="w-full lg:w-1/2 relative" data-aos="fade-right">
+                    <!-- Decorative background block -->
+                    <div class="absolute -top-6 -left-6 md:-top-8 md:-left-8 w-[95%] h-full bg-[#E5F6F4] rounded-[24px] dark:bg-[#14B8A6]/10 z-0 border border-[#14B8A6]/20"></div>
+                    <!-- Main image -->
+                    <div class="relative z-10 rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white dark:border-slate-800 bg-white">
+                        <img src="images/unnamed.webp" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';" alt="Sri Sai Divya Dental Clinic Interior" class="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="w-full lg:w-1/2 flex flex-col" data-aos="fade-left">
+                    <div class="inline-block bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-md self-start mb-4">
+                        <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400">Welcome To</span>
+                    </div>
+                    <h2 class="text-[32px] md:text-[42px] font-display font-bold text-surface-dark dark:text-surface-light leading-[1.1] mb-6">
+                        SRI SAI DIVYA DENTAL CLINIC
+                    </h2>
+                    <p class="text-[15px] md:text-base text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-medium bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+                        Sri Sai Divya Dental Clinic is a trusted dental care center offering high-quality treatments for patients of all ages. The clinic is known for its skilled dental professionals, patient-friendly environment, and modern treatment methods.
+                    </p>
+
+                    <div class="flex flex-col gap-6">
+                        <!-- Point 1 -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-8 h-8 rounded-full bg-[#14B8A6] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_5px_15px_rgba(20,184,166,0.3)] group-hover:-translate-y-1 transition-transform duration-300">
+                                1
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed pt-0.5 group-hover:text-surface-dark dark:group-hover:text-surface-light transition-colors text-[15px]">
+                                We listen carefully to your concerns and design personalized treatment plans that put your health and comfort first.
+                            </p>
+                        </div>
+                        
+                        <!-- Point 2 -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-8 h-8 rounded-full bg-[#14B8A6] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_5px_15px_rgba(20,184,166,0.3)] group-hover:-translate-y-1 transition-transform duration-300">
+                                2
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed pt-0.5 group-hover:text-surface-dark dark:group-hover:text-surface-light transition-colors text-[15px]">
+                                We are dedicated to providing the highest standards in dental care by continuously updating our skills and technology.
+                            </p>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-8 h-8 rounded-full bg-[#14B8A6] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_5px_15px_rgba(20,184,166,0.3)] group-hover:-translate-y-1 transition-transform duration-300">
+                                3
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed pt-0.5 group-hover:text-surface-dark dark:group-hover:text-surface-light transition-colors text-[15px]">
+                                Building long-lasting relationships through honesty, integrity, and quality service is at the heart of everything we do.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.6 HIGH-IMPACT TRUST METRICS -->
+    <section class="py-24 relative z-10 overflow-hidden bg-surface-dark dark:bg-surface-black border-y border-white/10"
+        id="trust-metrics">
+
+        <!-- Background Effects -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none">
+        </div>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+            <div
+                class="absolute w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -top-1/2 -left-1/4 animate-pulse-glow">
+            </div>
+            <div class="absolute w-[400px] h-[400px] bg-accent/10 rounded-full blur-[80px] bottom-0 right-0"></div>
+        </div>
+
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] font-bold text-accent uppercase tracking-[0.2em] mb-6">
+                    <i class="fas fa-award"></i> Proven Excellence
+                </div>
+                <h2 class="text-[40px] md:text-[56px] font-display font-bold text-white mb-6 leading-tight">
+                    Trusted by <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] to-[#0EA5E9]">Thousands</span>
+                    of Smiles
+                </h2>
+                <p class="text-sub text-slate-400 font-medium">
+                    Delivering consistent results with care, precision, and a commitment to patient satisfaction.
+                </p>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Metric 1 -->
+                <div class="relative group p-8 rounded-[24px] bg-white/[0.03] border border-white/[0.05] hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(14,165,233,0.15)] interactive-hover"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-smile-beam"></i>
+                    </div>
+                    <div
+                        class="text-[48px] md:text-[56px] font-display font-bold text-white mb-1 leading-none drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                        <span class="count-up" data-target="5000">0</span>+
+                    </div>
+                    <p
+                        class="text-label text-slate-400 uppercase tracking-widest font-semibold mt-2 group-hover:text-slate-300 transition-colors">
+                        Smiles Transformed</p>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="relative group p-8 rounded-[24px] bg-white/[0.03] border border-white/[0.05] hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(14,165,233,0.15)] interactive-hover"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div
+                        class="text-[48px] md:text-[56px] font-display font-bold text-white mb-1 leading-none drop-shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-baseline">
+                        <span class="count-up" data-target="98">0</span><span
+                            class="text-3xl ml-1 text-slate-400">%</span>
+                    </div>
+                    <p
+                        class="text-label text-slate-400 uppercase tracking-widest font-semibold mt-2 group-hover:text-slate-300 transition-colors">
+                        Success Rate</p>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="relative group p-8 rounded-[24px] bg-white/[0.03] border border-white/[0.05] hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(14,165,233,0.15)] interactive-hover"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div
+                        class="text-[48px] md:text-[56px] font-display font-bold text-white mb-1 leading-none drop-shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-baseline">
+                        <span class="count-up" data-target="4.9" data-decimal="true">0.0</span><span
+                            class="text-3xl ml-2 text-accent">★</span>
+                    </div>
+                    <p
+                        class="text-label text-slate-400 uppercase tracking-widest font-semibold mt-2 group-hover:text-slate-300 transition-colors">
+                        Patient Rating</p>
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="relative group p-8 rounded-[24px] bg-white/[0.03] border border-white/[0.05] hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(14,165,233,0.15)] interactive-hover"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div
+                        class="text-[48px] md:text-[56px] font-display font-bold text-white mb-1 leading-none drop-shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-baseline">
+                        <span class="count-up" data-target="10">0</span><span
+                            class="text-3xl ml-1 text-slate-400">+</span>
+                    </div>
+                    <p
+                        class="text-label text-slate-400 uppercase tracking-widest font-semibold mt-2 group-hover:text-slate-300 transition-colors">
+                        Years Experience</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.8 PREMIUM SERVICES GRID -->
+    <section id="services" class="py-32 relative z-10 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent dark:via-primary/5 z-0 pointer-events-none">
+        </div>
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h4 class="text-primary font-semibold tracking-widest text-label uppercase mb-4">Our Expertise</h4>
+                <h2
+                    class="text-[40px] md:text-[48px] font-display font-bold text-surface-dark dark:text-surface-light mb-6 leading-tight">
+                    Advanced Dental Care,<br>
+                    <span class="text-gradient-primary">Designed for You</span>
+                </h2>
+                <p class="text-sub text-slate-600 dark:text-slate-400 font-medium">
+                    Comprehensive treatments using modern technology and gentle care to ensure your perfect smile.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <!-- Service 1: Orthodontic Braces -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Orthodontic Braces.jpg"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Orthodontic Braces"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-teeth-open"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Orthodontic Braces</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Straighten your teeth comfortably with advanced orthodontic solutions.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Cosmetic Dentistry -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/love smile.jpg" onerror="this.onerror=null; this.src='images/default.jpg';"
+                            loading="lazy" alt="Cosmetic Dentistry"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Cosmetic Dentistry</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Completely redesign your smile with veneers, bonding, and aesthetic solutions.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Wisdom Teeth Removal -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/wisdom teeth" onerror="this.onerror=null; this.src='images/default.jpg';"
+                            loading="lazy" alt="Wisdom Teeth Removal"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Wisdom Teeth Removal</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Painless and safe extraction of impacted or problematic wisdom teeth.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Restorative Dentistry -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Restorative Dentistry.jpg"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Restorative Dentistry"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Restorative Dentistry</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Restore the function and integrity of missing or damaged teeth.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5: Invisible Aligners -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Invisible Aligners.jpg"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Invisible Aligners"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-smile-beam"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Invisible Aligners</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Clear, removable, and comfortable aligners for a perfect smile without metal.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6: Pediatric Dentistry -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Pediatric Dentistry.jpg"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Pediatric Dentistry"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Pediatric Dentistry</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Gentle, anxiety-free, and highly friendly dental care exclusively tailored for children.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 7: Dental Implants -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Dental Implants.jpg"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Dental Implants"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Dental Implants</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Permanent solution for missing teeth with a natural look and unparalleled strength.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 8: Root Canal Treatment -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="450">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Root Canal Treatment.jpg"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Root Canal Treatment"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Root Canal Treatment</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Painless, precise microscopic treatment to save and restore infected teeth permanently.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 9: Crowns & Bridges -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Crowns & Bridges.com_procedures_dental-bridge_"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Crowns & Bridges"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Crowns & Bridges</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            High-quality, durable restorations to protect damaged teeth and bridge gaps perfectly.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 10: Flap Surgery -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="550">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Flap Surgery.jpg" onerror="this.onerror=null; this.src='images/default.jpg';"
+                            loading="lazy" alt="Flap Surgery"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-band-aid"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Flap Surgery</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            Advanced periodontal treatment to treat severe gum disease and restore oral health.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 11: Smile Designing -->
+                <div class="glass-card service-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.03] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full"
+                    onclick="openServiceModal(this)" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-full h-48 md:h-[200px] overflow-hidden relative z-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-40">
+                        </div>
+                        <img src="images/Smile Designing.jpg"
+                            onerror="this.onerror=null; this.src='images/default.jpg';" loading="lazy"
+                            alt="Smile Designing"
+                            class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div
+                        class="p-8 relative z-20 flex-1 flex flex-col bg-white/60 dark:bg-slate-900/60 rounded-b-[24px]">
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] skew-x-[30deg] group-hover:animate-sweep pointer-events-none z-10 dark:via-white/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-4 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 relative z-20 -mt-14 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-3 relative z-20">
+                            Smile Designing</h3>
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-6 relative z-20 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300 flex-1">
+                            A comprehensive, personalized approach to creating your ideal, photogenic smile.
+                        </p>
+                        <button onclick="event.stopPropagation(); openServiceModal(this.closest('.service-card'))"
+                            class="mt-auto w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.4)] transition-all duration-300 group/btn relative z-20">
+                            <i class="fas fa-play-circle text-base group-hover/btn:scale-110 transition-transform"></i>
+                            Watch procedure <span class="ml-1">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Services Video Modal -->
+    <div id="service-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-auto" onclick="closeServiceModal()">
+        </div>
+
+        <!-- Modal Content -->
+        <div id="service-modal-content"
+            class="relative w-full h-full md:w-[90%] md:h-auto md:max-w-4xl bg-transparent md:bg-white/60 dark:md:bg-slate-900/60 md:backdrop-blur-[20px] rounded-none md:rounded-[24px] md:shadow-[0_20px_60px_rgba(0,0,0,0.3)] md:border md:border-white/20 dark:md:border-slate-700 overflow-hidden transform scale-90 transition-transform duration-300 pointer-events-auto flex flex-col md:flex-row">
+
+            <!-- Close Button -->
+            <button onclick="closeServiceModal()"
+                class="absolute top-4 right-4 z-50 w-10 h-10 bg-black/40 hover:bg-black/60 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Left: Video (Mobile uses full width/height, Desktop is 50%) -->
+            <div class="w-full h-full md:w-1/2 md:aspect-[9/16] bg-black relative flex items-center justify-center">
+                <video id="service-modal-video" class="w-full h-full object-contain md:object-cover" autoplay loop muted
+                    playsinline>
+                    <!-- source added dynamically -->
+                </video>
+            </div>
+
+            <!-- Right: Content (Desktop only) -->
+            <div class="hidden md:flex w-1/2 p-10 flex-col justify-center bg-white/60 dark:bg-slate-900/60">
+                <h2 id="service-modal-title"
+                    class="text-[32px] font-display font-bold text-surface-dark dark:text-surface-light mb-4"></h2>
+                <p id="service-modal-desc" class="text-body text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                </p>
+                <a href="#appointment" onclick="closeServiceModal()"
+                    class="inline-flex items-center justify-center bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-accent transition-colors self-start shadow-lg">
+                    Book Appointment <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 1.9 PREMIUM MEET EXPERTS -->
+    <section id="experts"
+        class="py-32 relative z-10 overflow-hidden bg-gradient-to-br from-white via-slate-50 to-primary/5 dark:from-surface-dark dark:via-surface-black dark:to-primary/10 border-y border-slate-100 dark:border-slate-800/50">
+        <!-- Floating Shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-40 z-0">
+            <div class="absolute w-[400px] h-[400px] bg-primary/10 rounded-full blur-[80px] top-[-10%] left-[-10%]">
+            </div>
+            <div
+                class="absolute w-[300px] h-[300px] bg-accent/10 rounded-full blur-[60px] bottom-[10%] right-[-5%] animate-pulse-glow">
+            </div>
+        </div>
+
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h4 class="text-primary font-semibold tracking-widest text-label uppercase mb-4">Meet The Team</h4>
+                <h2
+                    class="text-[40px] md:text-[48px] font-display font-bold text-surface-dark dark:text-surface-light mb-6 leading-tight">
+                    <span class="text-gradient-primary">Meet Our Doctor</span>
+                </h2>
+                <p class="text-sub text-slate-600 dark:text-slate-400 font-medium">
+                    Our dedicated team is here to provide you with the highest quality dental care.
+                </p>
+            </div>
+
+            <!-- Doctors Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
+
+                <!-- Doctor 1: Dr. Divya -->
+                <div class="glass-card group relative overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_25px_50px_rgba(14,165,233,0.15)] dark:hover:shadow-[0_25px_50px_rgba(56,189,248,0.15)] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full bg-white/60 dark:bg-slate-900/60"
+                    data-aos="fade-up" data-aos-delay="100">
+
+                    <!-- Glow Effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none">
+                    </div>
+
+                    <!-- Image Area -->
+                    <div
+                        class="relative w-full aspect-[4/5] sm:aspect-[4/3] md:aspect-[4/5] overflow-hidden rounded-t-[24px] z-10">
+                        <img src="images/Rushindra_Bandaru_Edit_this_image_of_a_woman_wearing_a_sari_into_a_professional_den_99b9f3a1-0b33-441a-bd81-12717d439715.jpg"
+                            alt="Dr. Divya"
+                            class="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110 filter brightness-105"
+                            style="object-position: center 70%; transform: scale(1.0);">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+                        <!-- Badge -->
+                        <div
+                            class="absolute top-6 left-6 bg-white dark:bg-slate-800 text-surface-dark dark:text-surface-light px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2 border border-slate-100 dark:border-slate-700 z-20">
+                            <i class="fas fa-star text-accent"></i> 10+ Years Experience
+                        </div>
+
+                        <!-- Social Icons (Hover Reveal) -->
+                        <div
+                            class="absolute top-6 right-6 flex flex-col gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-20">
+                            <div
+                                class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary transition-colors border border-white/30">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Area -->
+                    <div class="p-8 md:p-10 relative z-20 flex flex-col flex-1">
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 -mt-16 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 relative z-30">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+
+                        <h3 class="text-[28px] font-display font-bold text-surface-dark dark:text-surface-light mb-1">
+                            Dr. Divya</h3>
+                        <p class="text-accent font-semibold tracking-wider text-label uppercase mb-4">Doctor</p>
+
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-8 flex-1 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">
+                            “Specializing in advanced cosmetic dentistry, full mouth rehabilitations, and smile
+                            designing with over 10 years of clinical excellence.”
+                        </p>
+
+                        <button
+                            class="w-full py-4 rounded-xl font-semibold text-primary border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                            Book with Dr. Divya <i
+                                class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor 2: Dr. Ramesh -->
+                <div class="glass-card group relative overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_25px_50px_rgba(14,165,233,0.15)] dark:hover:shadow-[0_25px_50px_rgba(56,189,248,0.15)] hover:border-primary/50 cursor-pointer interactive-hover flex flex-col h-full bg-white/60 dark:bg-slate-900/60"
+                    data-aos="fade-up" data-aos-delay="200">
+
+                    <!-- Glow Effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none">
+                    </div>
+
+                    <!-- Image Area -->
+                    <div
+                        class="relative w-full aspect-[4/5] sm:aspect-[4/3] md:aspect-[4/5] overflow-hidden rounded-t-[24px] z-10">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Dr. Ramesh"
+                            class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 filter brightness-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+                        <!-- Social Icons (Hover Reveal) -->
+                        <div
+                            class="absolute top-6 right-6 flex flex-col gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-20">
+                            <div
+                                class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary transition-colors border border-white/30">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Area -->
+                    <div class="p-8 md:p-10 relative z-20 flex flex-col flex-1">
+                        <div
+                            class="w-14 h-14 rounded-[16px] glass-card flex items-center justify-center text-primary text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:text-accent transition-transform duration-300 -mt-16 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 relative z-30">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+
+                        <h3 class="text-[28px] font-display font-bold text-surface-dark dark:text-surface-light mb-1">
+                            Dr. Ramesh</h3>
+                        <p class="text-accent font-semibold tracking-wider text-label uppercase mb-4">Dental Hygienist</p>
+
+                        <p
+                            class="text-body text-slate-500 dark:text-slate-400 mb-8 flex-1 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">
+                            “Specializing in preventative care and professional dental cleaning to maintain your oral
+                            health and keep your smile bright and healthy.”
+                        </p>
+
+                        <button
+                            class="w-full py-4 rounded-xl font-semibold text-primary border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                            Book with Dr. Ramesh <i
+                                class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="why-choose-us" class="py-28 md:py-36 relative z-10 overflow-hidden bg-slate-50 dark:bg-surface-black border-t border-slate-100 dark:border-slate-800">
+
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -top-40 -left-40"></div>
+            <div class="absolute w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] bottom-0 right-0"></div>
+        </div>
+
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-20" data-aos="fade-up">
+                <span class="inline-block text-xs font-bold tracking-[0.25em] uppercase text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-5">Our Advantages</span>
+                <h2 class="text-[32px] md:text-[44px] font-display font-bold text-surface-dark dark:text-surface-light leading-tight mb-4">
+                    Why Choose <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Us</span>
+                </h2>
+                <p class="text-base text-slate-500 dark:text-slate-400 font-medium">What Makes Us Different</p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+                <!-- Card 1: Personalized Care -->
+                <div class="group relative rounded-[20px] p-7 bg-white/70 dark:bg-slate-800/60 backdrop-blur-[12px] border border-slate-100 dark:border-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.18)] hover:-translate-y-2 hover:border-primary/30 transition-all duration-300 cursor-default"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 rounded-[14px] bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-5 shadow-[0_6px_18px_rgba(14,165,233,0.35)] group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-heart text-white text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-bold text-surface-dark dark:text-surface-light mb-2">Personalized Care</h3>
+                    <p class="text-[14px] text-slate-500 dark:text-slate-400 leading-relaxed">Every smile is unique. We provide treatments tailored specifically to your needs.</p>
+                    <div class="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-[20px] bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Card 2: Advanced Technology -->
+                <div class="group relative rounded-[20px] p-7 bg-white/70 dark:bg-slate-800/60 backdrop-blur-[12px] border border-slate-100 dark:border-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.18)] hover:-translate-y-2 hover:border-primary/30 transition-all duration-300 cursor-default"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-[14px] bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-5 shadow-[0_6px_18px_rgba(14,165,233,0.35)] group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-microscope text-white text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-bold text-surface-dark dark:text-surface-light mb-2">Advanced Technology</h3>
+                    <p class="text-[14px] text-slate-500 dark:text-slate-400 leading-relaxed">We use modern equipment for precise, safe, and effective dental care.</p>
+                    <div class="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-[20px] bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Card 3: Painless Experience -->
+                <div class="group relative rounded-[20px] p-7 bg-white/70 dark:bg-slate-800/60 backdrop-blur-[12px] border border-slate-100 dark:border-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.18)] hover:-translate-y-2 hover:border-primary/30 transition-all duration-300 cursor-default"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-[14px] bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-5 shadow-[0_6px_18px_rgba(14,165,233,0.35)] group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-face-smile-relaxed text-white text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-bold text-surface-dark dark:text-surface-light mb-2">Painless Experience</h3>
+                    <p class="text-[14px] text-slate-500 dark:text-slate-400 leading-relaxed">Comfort-first approach ensuring stress-free and gentle treatments.</p>
+                    <div class="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-[20px] bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Card 4: Experienced Professionals -->
+                <div class="group relative rounded-[20px] p-7 bg-white/70 dark:bg-slate-800/60 backdrop-blur-[12px] border border-slate-100 dark:border-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.18)] hover:-translate-y-2 hover:border-primary/30 transition-all duration-300 cursor-default"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 rounded-[14px] bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-5 shadow-[0_6px_18px_rgba(14,165,233,0.35)] group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-doctor text-white text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-bold text-surface-dark dark:text-surface-light mb-2">Experienced Professionals</h3>
+                    <p class="text-[14px] text-slate-500 dark:text-slate-400 leading-relaxed">Skilled doctors with years of trusted clinical experience.</p>
+                    <div class="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-[20px] bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Card 5: Hygiene & Safety -->
+                <div class="group relative rounded-[20px] p-7 bg-white/70 dark:bg-slate-800/60 backdrop-blur-[12px] border border-slate-100 dark:border-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.18)] hover:-translate-y-2 hover:border-primary/30 transition-all duration-300 cursor-default"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-[14px] bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-5 shadow-[0_6px_18px_rgba(14,165,233,0.35)] group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-halved text-white text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-bold text-surface-dark dark:text-surface-light mb-2">Hygiene &amp; Safety</h3>
+                    <p class="text-[14px] text-slate-500 dark:text-slate-400 leading-relaxed">Strict sterilization and hygiene standards for your safety.</p>
+                    <div class="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-[20px] bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Card 6: Transparent Pricing -->
+                <div class="group relative rounded-[20px] p-7 bg-white/70 dark:bg-slate-800/60 backdrop-blur-[12px] border border-slate-100 dark:border-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.18)] hover:-translate-y-2 hover:border-primary/30 transition-all duration-300 cursor-default"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-[14px] bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-5 shadow-[0_6px_18px_rgba(14,165,233,0.35)] group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-tag text-white text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-bold text-surface-dark dark:text-surface-light mb-2">Transparent Pricing</h3>
+                    <p class="text-[14px] text-slate-500 dark:text-slate-400 leading-relaxed">Clear, affordable pricing with no hidden costs.</p>
+                    <div class="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-[20px] bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS (GOOGLE REVIEWS) -->
+    <section id="testimonials" class="py-32 relative z-10 overflow-hidden">
+        <!-- Background gradients -->
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-transparent dark:via-primary/5 pointer-events-none -z-10">
+        </div>
+
+        <div class="container max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h4 class="text-primary font-semibold tracking-widest text-label uppercase mb-4">What Our Patients Say
+                </h4>
+                <h2
+                    class="text-[40px] md:text-[48px] font-display font-bold text-surface-dark dark:text-surface-light mb-4 leading-tight">
+                    Real reviews from our <span class="text-gradient-primary">happy patients</span> on Google
+                </h2>
+                <p class="text-sub text-slate-600 dark:text-slate-400 font-medium">
+                    Discover why thousands of patients trust us with their smiles.
+                </p>
+            </div>
+
+            <!-- Optional Top Bar (Google Logo, Rating, Button) -->
+            <div class="flex flex-col md:flex-row items-center justify-between bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 mb-12 shadow-lg border border-slate-200 dark:border-slate-700 max-w-5xl mx-auto"
+                data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-4 mb-4 md:mb-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                        alt="Google Logo" class="w-10 h-10">
+                    <div>
+                        <div class="text-xl font-bold text-surface-dark dark:text-surface-light">Excellent</div>
+                        <div class="text-yellow-400 text-lg tracking-widest flex items-center gap-2">★★★★★ <span
+                                class="text-sm text-slate-500 font-medium tracking-normal mt-1">4.9 Rating</span></div>
+                    </div>
+                </div>
+                <a href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4"
+                    target="_blank"
+                    class="px-6 py-3 bg-white dark:bg-slate-700 text-surface-dark dark:text-surface-light border border-slate-200 dark:border-slate-600 rounded-xl font-bold hover:border-primary hover:text-primary dark:hover:border-primary transition-colors shadow-sm flex items-center gap-2">
+                    Review us on Google <i class="fas fa-external-link-alt text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Elfsight Wrapper -->
+            <div class="relative max-w-5xl mx-auto glass-card p-4 md:p-8 rounded-[24px] border border-white/60 dark:border-slate-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_25px_60px_rgba(56,189,248,0.15)] hover:-translate-y-2 transition-all duration-500 bg-white/60 dark:bg-slate-900/60 backdrop-blur-[16px] group"
+                data-aos="fade-up" data-aos-delay="200">
+                <!-- Inner Glow Effect -->
+                <div
+                    class="absolute inset-0 rounded-[24px] bg-gradient-to-tr from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                </div>
+
+                <!-- Elfsight Google Reviews -->
+                <div class="relative z-10 w-full overflow-hidden rounded-xl">
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-46ffd45e-6d19-450c-81cf-90dbd0124a4e" data-elfsight-app-lazy></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. APPOINTMENT BOOKING WIZARD -->
+    <section id="appointment"
+        class="py-32 relative z-10 overflow-hidden bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+        <div class="container max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-label font-semibold text-surface-dark dark:text-surface-light shadow-lg mb-6 border !border-primary/30">
+                    <i class="fas fa-calendar-check text-accent"></i> Effortless Scheduling
+                </div>
+                <h2
+                    class="text-[40px] md:text-[56px] font-display font-bold text-surface-dark dark:text-surface-light mb-4 leading-tight">
+                    Book an <span class="text-gradient-primary">Appointment</span>
+                </h2>
+                <p class="text-sub text-slate-600 dark:text-slate-400 font-medium">
+                    No boring forms. Just a smooth, step-by-step guided experience to schedule your visit.
+                </p>
+            </div>
+
+            <div class="glass-card p-6 md:p-12 relative overflow-visible shadow-2xl" data-aos="zoom-in"
+                data-aos-delay="100">
+
+                <!-- Confetti Container (hidden by default) -->
+                <div id="confetti-container"
+                    class="absolute inset-0 z-0 pointer-events-none overflow-hidden rounded-[24px]"></div>
+
+                <!-- Step Indicators (Header) -->
+                <div class="relative z-10 mb-12">
+                    <div class="flex justify-between items-center relative">
+                        <!-- Progress Line Behind -->
+                        <div
+                            class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 dark:bg-slate-700 -translate-y-1/2 z-0 rounded-full">
+                        </div>
+                        <div id="wizard-progress-line"
+                            class="absolute top-1/2 left-0 h-1 bg-primary -translate-y-1/2 z-0 rounded-full transition-all duration-500"
+                            style="width: 0%;"></div>
+
+                        <!-- Steps -->
+                        <div class="wizard-step-icon active relative z-10 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-[0_0_15px_rgba(14,165,233,0.5)] transition-all duration-300"
+                            data-step="1">1</div>
+                        <div class="wizard-step-icon relative z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center font-bold transition-all duration-300"
+                            data-step="2">2</div>
+                        <div class="wizard-step-icon relative z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center font-bold transition-all duration-300"
+                            data-step="3">3</div>
+                        <div class="wizard-step-icon relative z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center font-bold transition-all duration-300"
+                            data-step="4">4</div>
+                        <div class="wizard-step-icon relative z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center font-bold transition-all duration-300"
+                            data-step="5"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center mt-3 text-[10px] md:text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        <span class="text-primary transition-colors duration-300" id="label-1">Service</span>
+                        <span class="transition-colors duration-300" id="label-2">Date</span>
+                        <span class="transition-colors duration-300" id="label-3">Time</span>
+                        <span class="transition-colors duration-300" id="label-4">Details</span>
+                        <span class="transition-colors duration-300" id="label-5">Confirm</span>
+                    </div>
+                </div>
+
+                <!-- Wizard Content Area -->
+                <div class="relative min-h-[900px] sm:min-h-[650px] md:min-h-[600px] lg:min-h-[450px] z-10">
+
+                    <!-- STEP 1: SERVICE -->
+                    <div id="wizard-step-1"
+                        class="wizard-step transition-all duration-400 ease-out absolute inset-0 w-full">
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-6 text-center">
+                            What can we help you with?</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-teeth-open"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">
+                                    Orthodontic Braces</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-gem"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Cosmetic
+                                    Dentistry</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-syringe"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Wisdom
+                                    Teeth</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tools"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">
+                                    Restorative</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-smile-beam"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Invisible
+                                    Aligners</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-child"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Pediatric
+                                </h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tooth"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Dental
+                                    Implants</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-shield-alt"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Root
+                                    Canal</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-crown"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Crowns &
+                                    Bridges</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-band-aid"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Flap
+                                    Surgery</h4>
+                            </button>
+                            <button onclick="selectWizardTreatment(this)"
+                                class="treatment-card p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 interactive-hover group flex flex-col items-center text-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-magic"></i></div>
+                                <h4 class="font-semibold text-surface-dark dark:text-surface-light text-label">Smile
+                                    Designing</h4>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: DATE -->
+                    <div id="wizard-step-2"
+                        class="wizard-step opacity-0 translate-x-8 pointer-events-none transition-all duration-400 ease-out absolute inset-0 w-full">
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-8 text-center">
+                            When would you like to come in?</h3>
+                        <div class="max-w-sm mx-auto">
+                            <div
+                                class="bg-white dark:bg-surface-black rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-800 relative group">
+                                <label class="block text-label font-bold text-slate-500 mb-3">Select Date</label>
+                                <input type="date"
+                                    class="w-full glass-input text-center font-display font-bold text-surface-dark dark:text-surface-light text-sub mb-4 interactive-hover cursor-pointer focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                    id="appointment-date">
+                                <button onclick="saveDateAndContinue()"
+                                    class="w-full glow-btn interactive-hover mt-2">Continue</button>
+                            </div>
+                            <div class="text-center mt-6">
+                                <button onclick="prevWizardStep(1)"
+                                    class="text-label font-semibold text-slate-500 hover:text-primary transition-colors"><i
+                                        class="fas fa-arrow-left mr-2"></i>Back to Services</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: TIME -->
+                    <div id="wizard-step-3"
+                        class="wizard-step opacity-0 translate-x-8 pointer-events-none transition-all duration-400 ease-out absolute inset-0 w-full">
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-2 text-center">
+                            Pick a Time Slot</h3>
+                        <div class="max-w-md mx-auto">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
+                                <button onclick="selectWizardTime(this)"
+                                    class="time-slot p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-semibold text-body text-surface-dark dark:text-surface-light hover:border-primary hover:text-primary transition-all duration-200">10:00
+                                    AM</button>
+                                <button onclick="selectWizardTime(this)"
+                                    class="time-slot p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-semibold text-body text-surface-dark dark:text-surface-light hover:border-primary hover:text-primary transition-all duration-200">11:00
+                                    AM</button>
+                                <button onclick="selectWizardTime(this)"
+                                    class="time-slot p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-semibold text-body text-surface-dark dark:text-surface-light hover:border-primary hover:text-primary transition-all duration-200">12:00
+                                    PM</button>
+                                <button onclick="selectWizardTime(this)"
+                                    class="time-slot p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-semibold text-body text-surface-dark dark:text-surface-light hover:border-primary hover:text-primary transition-all duration-200">04:00
+                                    PM</button>
+                                <button onclick="selectWizardTime(this)"
+                                    class="time-slot p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-semibold text-body text-surface-dark dark:text-surface-light hover:border-primary hover:text-primary transition-all duration-200">05:00
+                                    PM</button>
+                                <button onclick="selectWizardTime(this)"
+                                    class="time-slot p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-semibold text-body text-surface-dark dark:text-surface-light hover:border-primary hover:text-primary transition-all duration-200">06:00
+                                    PM</button>
+                            </div>
+                            <div class="text-center">
+                                <button onclick="prevWizardStep(2)"
+                                    class="text-label font-semibold text-slate-500 hover:text-primary transition-colors"><i
+                                        class="fas fa-arrow-left mr-2"></i>Change Date</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4: DETAILS -->
+                    <div id="wizard-step-4"
+                        class="wizard-step opacity-0 translate-x-8 pointer-events-none transition-all duration-400 ease-out absolute inset-0 w-full">
+                        <h3
+                            class="text-sub font-display font-semibold text-surface-dark dark:text-surface-light mb-8 text-center">
+                            Almost done. Just your details.</h3>
+                        <div class="max-w-md mx-auto space-y-5 mb-8">
+                            <div class="relative">
+                                <input type="text" id="booking-name"
+                                    class="w-full glass-input peer pt-6 pb-2 px-4 text-body text-surface-dark dark:text-surface-light placeholder-transparent interactive-hover"
+                                    placeholder="Full Name">
+                                <label
+                                    class="absolute left-4 top-2 text-[11px] font-bold uppercase tracking-wider text-slate-400 transition-all peer-placeholder-shown:text-body peer-placeholder-shown:top-4 peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-primary pointer-events-none">Full
+                                    Name</label>
+                            </div>
+                            <div class="relative">
+                                <input type="tel" id="booking-phone"
+                                    class="w-full glass-input peer pt-6 pb-2 px-4 text-body text-surface-dark dark:text-surface-light placeholder-transparent interactive-hover"
+                                    placeholder="Phone Number">
+                                <label
+                                    class="absolute left-4 top-2 text-[11px] font-bold uppercase tracking-wider text-slate-400 transition-all peer-placeholder-shown:text-body peer-placeholder-shown:top-4 peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-primary pointer-events-none">Phone
+                                    Number</label>
+                            </div>
+                            <div class="relative">
+                                <input type="email" id="booking-email"
+                                    class="w-full glass-input peer pt-6 pb-2 px-4 text-body text-surface-dark dark:text-surface-light placeholder-transparent interactive-hover"
+                                    placeholder="Email Address">
+                                <label
+                                    class="absolute left-4 top-2 text-[11px] font-bold uppercase tracking-wider text-slate-400 transition-all peer-placeholder-shown:text-body peer-placeholder-shown:top-4 peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-primary pointer-events-none">Email
+                                    Address</label>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col-reverse md:flex-row justify-between items-center max-w-md mx-auto gap-4">
+                            <button onclick="prevWizardStep(3)"
+                                class="text-label font-semibold text-slate-500 hover:text-primary transition-colors w-full md:w-auto text-center"><i
+                                    class="fas fa-arrow-left mr-2"></i>Back</button>
+                            <button id="submit-booking-btn" onclick="submitBooking()"
+                                class="glow-btn interactive-hover w-full md:w-auto shadow-[0_0_20px_rgba(14,165,233,0.4)]">Confirm
+                                Booking <i class="fas fa-check ml-2"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 5: SUCCESS -->
+                    <div id="wizard-step-5"
+                        class="wizard-step opacity-0 translate-x-8 pointer-events-none transition-all duration-400 ease-out absolute inset-0 w-full flex flex-col items-center justify-center">
+                        <div
+                            class="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 text-green-500 flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(34,197,94,0.3)] animate-[pulseGlow_2s_ease-in-out_infinite]">
+                            <i class="fas fa-check-circle animate-[ping_0.5s_cubic-bezier(0,0,0.2,1)_1]"></i>
+                        </div>
+                        <h3
+                            class="text-section font-display font-bold text-surface-dark dark:text-surface-light mb-3 text-center">
+                            Appointment Confirmed!</h3>
+                        <p class="text-body text-slate-500 dark:text-slate-400 mb-6 text-center max-w-sm">
+                            Thank you, <span id="success-name" class="font-bold text-primary"></span>. Your appointment
+                            has been successfully scheduled. We will send you a reminder shortly.
+                        </p>
+
+                        <div
+                            class="bg-white/50 dark:bg-slate-800/50 rounded-xl p-4 mb-8 w-full max-w-sm border border-slate-100 dark:border-slate-700 shadow-sm animate-zoom-in">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-label font-bold text-slate-500">Service:</span>
+                                <span id="success-service"
+                                    class="text-sm font-bold text-surface-dark dark:text-surface-light"></span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-label font-bold text-slate-500">Date:</span>
+                                <span id="success-date"
+                                    class="text-sm font-bold text-surface-dark dark:text-surface-light"></span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-label font-bold text-slate-500">Time:</span>
+                                <span id="success-time"
+                                    class="text-sm font-bold text-surface-dark dark:text-surface-light"></span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-sm">
+                            <button id="success-wa-btn"
+                                class="flex-1 glass-btn interactive-hover !border-green-500/30 hover:bg-green-50 dark:hover:bg-green-900/20 text-green-600 dark:text-green-400">
+                                <i class="fab fa-whatsapp mr-2"></i> Get Updates
+                            </button>
+                            <button class="flex-1 glow-btn interactive-hover">
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. BEFORE AND AFTER PREVIEW SECTION -->
+    <section id="smile-preview"
+        class="py-32 relative z-10 overflow-hidden bg-gradient-to-b from-white to-sky-50 dark:from-surface-dark dark:to-surface-black border-y border-slate-100 dark:border-slate-800">
+        <!-- Minimal Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div
+                class="absolute w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            </div>
+        </div>
+
+        <div class="container max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 backdrop-blur-md text-xs font-bold text-accent tracking-widest uppercase mb-6 shadow-sm">
+                    <i class="fas fa-image"></i> Before & After Results
+                </div>
+                <h2
+                    class="text-[40px] md:text-[56px] font-display font-bold text-surface-dark dark:text-surface-light mb-6 leading-tight">
+                    See the Difference in <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Your Smile</span>
+                </h2>
+                <p class="text-sub text-slate-600 dark:text-slate-400 font-medium max-w-2xl mx-auto">
+                    Experience how your smile can transform with advanced dental care. Slide to compare the results.
+                </p>
+            </div>
+
+            <!-- Interactive Before/After Slider -->
+            <div class="relative w-full max-w-4xl mx-auto rounded-[24px] overflow-hidden aspect-[4/3] md:aspect-[16/9] cursor-ew-resize select-none shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group touch-none"
+                id="ba-slider-container" data-aos="zoom-in" data-aos-delay="100">
+                
+                <!-- After Image (Background) -->
+                <img src="images/after.jpg" onerror="this.onerror=null; this.src='images/default.jpg';" class="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-105" alt="After Treatment">
+                <div class="absolute top-4 right-4 z-20 bg-primary/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold tracking-wider text-white border border-white/20 shadow-lg">AFTER</div>
+                
+                <!-- Before Image (Clipped Overlay) -->
+                <div class="absolute inset-0 w-1/2 overflow-hidden border-r-[3px] border-white pointer-events-none shadow-[5px_0_20px_rgba(0,0,0,0.3)] z-10" id="ba-before-wrapper">
+                    <!-- Note: The before image width is forced to match the container width via JS or CSS calc, so object-cover works correctly -->
+                    <img src="images/before.jpg" onerror="this.onerror=null; this.src='images/default.jpg';" class="absolute top-0 left-0 h-full object-cover pointer-events-none" id="ba-before-img" alt="Before Treatment" style="width: 200%; max-width: none;">
+                    <div class="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold tracking-wider text-white border border-white/10 shadow-lg">BEFORE</div>
+                </div>
+                
+                <!-- Slider Handle -->
+                <div class="absolute top-0 bottom-0 left-1/2 w-0.5 bg-white -translate-x-1/2 z-20 pointer-events-none flex items-center justify-center transition-transform duration-75" id="ba-handle">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(0,0,0,0.4)] text-primary text-sm transform transition-transform group-hover:scale-110">
+                        <i class="fas fa-chevron-left text-slate-400 mr-1"></i>
+                        <i class="fas fa-chevron-right text-slate-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Initialization Script for Slider -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const container = document.getElementById('ba-slider-container');
+                    const beforeWrapper = document.getElementById('ba-before-wrapper');
+                    const beforeImg = document.getElementById('ba-before-img');
+                    const handle = document.getElementById('ba-handle');
+                    let isDragging = false;
+
+                    // Sync the inner before image width to exactly the container width
+                    const syncWidth = () => {
+                        const containerWidth = container.offsetWidth;
+                        beforeImg.style.width = `${containerWidth}px`;
+                    };
+                    window.addEventListener('resize', syncWidth);
+                    syncWidth();
+
+                    const moveSlider = (clientX) => {
+                        const rect = container.getBoundingClientRect();
+                        let x = clientX - rect.left;
+                        x = Math.max(0, Math.min(x, rect.width)); // clamp
+                        const percentage = (x / rect.width) * 100;
+                        beforeWrapper.style.width = `${percentage}%`;
+                        handle.style.left = `${percentage}%`;
+                    };
+
+                    container.addEventListener('mousedown', (e) => {
+                        isDragging = true;
+                        moveSlider(e.clientX);
+                    });
+                    window.addEventListener('mousemove', (e) => {
+                        if (!isDragging) return;
+                        moveSlider(e.clientX);
+                    });
+                    window.addEventListener('mouseup', () => {
+                        isDragging = false;
+                    });
+
+                    // Touch support
+                    container.addEventListener('touchstart', (e) => {
+                        isDragging = true;
+                        moveSlider(e.touches[0].clientX);
+                    }, {passive: true});
+                    window.addEventListener('touchmove', (e) => {
+                        if (!isDragging) return;
+                        moveSlider(e.touches[0].clientX);
+                    }, {passive: true});
+                    window.addEventListener('touchend', () => {
+                        isDragging = false;
+                    });
+                });
+            </script>
+
+            <!-- Optional CTA -->
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+                <a href="#appointment"
+                    class="inline-flex items-center justify-center glow-btn interactive-hover px-8 py-4">
+                    Book Consultation <i class="fas fa-calendar-check ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 relative z-10 overflow-hidden bg-slate-50/50 dark:bg-slate-900/50">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-50 z-0">
+            <div class="absolute w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] top-[-10%] right-[-10%]">
+            </div>
+        </div>
+
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h4 class="text-primary font-semibold tracking-widest text-label uppercase mb-4">Visit Us</h4>
+                <h2
+                    class="text-[36px] md:text-[48px] font-display font-bold text-surface-dark dark:text-surface-light mb-4 leading-tight">
+                    Find Your Way to a <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Better
+                        Smile</span>
+                </h2>
+                <p class="text-body text-slate-600 dark:text-slate-400">Located in the heart of the city with modern
+                    facilities and easy parking.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+
+                <!-- Left: Map Area (60%) -->
+                <div class="lg:w-3/5 w-full h-[400px] lg:h-auto min-h-[400px] relative rounded-[24px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] border border-slate-200 dark:border-slate-800 group"
+                    data-aos="fade-right">
+                    <!-- Subtle loading state placeholder -->
+                    <div
+                        class="absolute inset-0 bg-slate-100 dark:bg-slate-800 animate-pulse flex items-center justify-center -z-10">
+                        <i class="fas fa-map-marker-alt text-4xl text-slate-300 dark:text-slate-600"></i>
+                    </div>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d484514.72717242903!2d83.01605410625002!3d18.425986807159706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bec9ded6cef1f%3A0xb94f6db63ff4f60f!2sSri%20Sai%20DIVYA%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1777725004731!5m2!1sen!2sin"
+                        width="100%" height="100%"
+                        style="border:0; filter: contrast(1.1) saturate(1.1) brightness(0.9) hue-rotate(5deg);"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]"></iframe>
+
+                    <!-- Floating Quick Action Bar on Map -->
+                    <div
+                        class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 bg-white/90 dark:bg-surface-black/90 backdrop-blur-md p-2 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 transition-transform duration-300 translate-y-20 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+                        <a href="https://maps.google.com" target="_blank"
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                            title="Get Directions"><i class="fas fa-directions"></i></a>
+                        <a href="tel:+919493596930"
+                            class="w-10 h-10 rounded-full bg-green-100/50 flex items-center justify-center text-green-600 hover:bg-green-500 hover:text-white transition-colors"
+                            title="Call Clinic"><i class="fas fa-phone-alt"></i></a>
+                        <a href="https://wa.me/919493596930" target="_blank"
+                            class="w-10 h-10 rounded-full bg-green-100/50 flex items-center justify-center text-green-600 hover:bg-green-500 hover:text-white transition-colors"
+                            title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Card (40%) -->
+                <div class="lg:w-2/5 w-full" data-aos="fade-left">
+                    <div
+                        class="glass-card h-full p-8 rounded-[24px] bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/50 dark:border-slate-800 shadow-[0_20px_40px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+
+                        <!-- Hover Glow Effect -->
+                        <div
+                            class="absolute w-64 h-64 bg-primary/5 rounded-full blur-[50px] -top-10 -right-10 pointer-events-none group-hover:bg-primary/10 transition-colors duration-500">
+                        </div>
+
+                        <!-- Header & Live Status -->
+                        <div class="flex justify-between items-start mb-8 relative z-10">
+                            <div>
+                                <h3 class="text-2xl font-display font-bold text-surface-dark dark:text-surface-light">
+                                    Sri Sai Divya</h3>
+                                <p class="text-primary font-medium text-sm">Advanced Dental Clinic</p>
+                            </div>
+                            <div id="live-status"
+                                class="px-3 py-1.5 rounded-full border flex items-center gap-2 text-xs font-bold transition-colors">
+                                <!-- JS will inject Open/Close state here -->
+                                <span class="w-2 h-2 rounded-full animate-pulse"></span>
+                                <span class="status-text">Checking...</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6 relative z-10">
+                            <!-- Address -->
+                            <a href="https://maps.google.com" target="_blank"
+                                class="flex gap-4 p-4 rounded-xl hover:bg-white dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700 interactive-hover group/item">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-lg flex-shrink-0 group-hover/item:bg-primary group-hover/item:text-white transition-colors">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Location
+                                    </p>
+                                    <p class="text-sm font-medium text-surface-dark dark:text-surface-light">Besides
+                                        Narayanarao Documention center,<br>India 1 ATM, NH 26,
+                                        Gajapatinagaram,<br>Andhra Pradesh 535270</p>
+                                </div>
+                            </a>
+
+                            <!-- Phone -->
+                            <a href="tel:+919493596930"
+                                class="flex gap-4 p-4 rounded-xl hover:bg-white dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700 interactive-hover group/item">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 text-lg flex-shrink-0 group-hover/item:bg-green-500 group-hover/item:text-white transition-colors">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Call Us
+                                    </p>
+                                    <p
+                                        class="text-lg font-bold text-surface-dark dark:text-surface-light tracking-wide">
+                                        +91 94935 96930</p>
+                                </div>
+                            </a>
+
+                            <!-- Timings -->
+                            <div class="flex gap-4 p-4 rounded-xl">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-lg flex-shrink-0">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="w-full">
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Working
+                                        Hours</p>
+                                    <div
+                                        class="flex justify-between items-center text-sm font-medium text-surface-dark dark:text-surface-light mb-1 border-b border-slate-100 dark:border-slate-800 pb-1">
+                                        <span>Mon - Sat</span>
+                                        <span class="font-bold">10:00 AM - 08:30 PM</span>
+                                    </div>
+                                    <div
+                                        class="flex justify-between items-center text-sm font-medium text-slate-500 dark:text-slate-400 pt-1">
+                                        <span>Sunday</span>
+                                        <span class="font-bold text-red-400">Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="mt-8 flex flex-col sm:flex-row gap-3 relative z-10">
+                            <a href="https://maps.google.com" target="_blank"
+                                class="flex-1 text-center py-3.5 rounded-xl bg-surface-dark dark:bg-white text-white dark:text-surface-dark font-bold hover:bg-primary dark:hover:bg-primary hover:text-white transition-all shadow-md hover:shadow-[0_10px_20px_rgba(14,165,233,0.3)] interactive-hover">
+                                Get Directions <i class="fas fa-location-arrow ml-1"></i>
+                            </a>
+                            <a href="#appointment"
+                                class="flex-1 text-center py-3.5 rounded-xl glow-btn font-bold interactive-hover">
+                                Book Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Sticky Footer Action Bar -->
+    <div
+        class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 dark:bg-surface-black/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 z-[40] flex items-center justify-around p-3 pb-safe shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
+        <a href="tel:+919493596930"
+            class="flex flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary transition-colors">
+            <i class="fas fa-phone-alt text-lg"></i>
+            <span class="text-[10px] font-bold">Call</span>
+        </a>
+        <a href="https://maps.google.com" target="_blank"
+            class="flex flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary transition-colors">
+            <i class="fas fa-directions text-lg"></i>
+            <span class="text-[10px] font-bold">Directions</span>
+        </a>
+        <a href="#appointment" class="flex flex-col items-center justify-center gap-1 text-primary relative -mt-5">
+            <div
+                class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-[0_5px_15px_rgba(14,165,233,0.4)] border-[3px] border-white dark:border-surface-black">
+                <i class="far fa-calendar-check text-lg"></i>
+            </div>
+            <span class="text-[10px] font-bold mt-1">Book</span>
+        </a>
+    </div>
+
+    <footer class="pt-24 pb-12 relative z-10 border-t border-slate-200 dark:border-slate-800">
+        <div class="container max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16 md:mb-0 flex flex-col items-center">
+            <img src="images/Gemini_Generated_Image_slolgkslolgkslol.png" alt="Sri Sai Divya Dental Clinic Logo"
+                class="h-16 w-16 object-cover rounded-xl shadow-md mb-4 border border-slate-200 dark:border-slate-800">
+            <h2 class="text-section font-display font-bold text-surface-dark dark:text-surface-light mb-4">Sri Sai Divya
+            </h2>
+            <p class="text-body text-slate-500 mb-8">Engineering perfect smiles through advanced technology.</p>
+            <p class="text-label text-slate-400">© 2026 Sri Sai Divya Dental Clinic.</p>
+        </div>
+    </footer>
+
+    <!-- 4. FLOATING AI ASSISTANT -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+
+        <!-- Chat Panel -->
+        <div id="ai-chat"
+            class="hidden opacity-0 translate-y-4 mb-4 w-[350px] max-w-[calc(100vw-3rem)] glass-card border border-white/20 dark:border-slate-700 overflow-hidden shadow-2xl transition-all duration-300 ease-out flex flex-col"
+            style="transform-origin: bottom right;">
+
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-primary to-accent p-4 text-white relative">
+                <button onclick="clearChat()"
+                    class="absolute top-4 right-12 text-white/80 hover:text-white transition-colors" title="Clear Chat">
+                    <i class="fas fa-trash-alt text-sm"></i>
+                </button>
+                <button onclick="toggleChat()"
+                    class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="flex items-center gap-3">
+                    <div
+                        class="relative w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                        <i class="fas fa-tooth text-primary text-xl drop-shadow-sm"></i>
+                        <i
+                            class="fas fa-sparkles absolute -top-0 -right-1 text-yellow-400 text-[10px] animate-pulse"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold leading-tight">Smile Assistant</h4>
+                        <p class="text-[11px] text-white/80 font-medium">Always here to help</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="p-4 bg-white/50 dark:bg-slate-900/50 h-[300px] overflow-y-auto flex flex-col gap-4"
+                id="chat-messages">
+                <!-- Auto Greeting -->
+                <div class="flex gap-2">
+                    <div
+                        class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0 flex items-center justify-center text-white text-[12px] mt-1 shadow-[0_2px_10px_rgba(14,165,233,0.3)] border border-white dark:border-slate-800">
+                        <i class="fas fa-tooth drop-shadow-sm"></i>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-3 rounded-2xl rounded-tl-sm text-body text-surface-dark dark:text-surface-light shadow-sm border border-slate-100 dark:border-slate-700 animate-[fade-in_0.3s_ease-out]">
+                        Hi 👋 I’m your Smile Assistant.<br><br>I can help you choose treatments, answer questions, or
+                        book an appointment.
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex flex-wrap gap-2 pl-8 animate-[fade-in_0.5s_ease-out_0.5s_both]">
+                    <button onclick="handleQuickAction('Book Appointment')"
+                        class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold hover:bg-primary hover:text-white transition-all duration-200 border border-primary/20">Book
+                        Appointment</button>
+                    <button onclick="handleQuickAction('Teeth Whitening')"
+                        class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold hover:bg-primary hover:text-white transition-all duration-200 border border-primary/20">Teeth
+                        Whitening Info</button>
+                    <button onclick="handleQuickAction('Location')"
+                        class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold hover:bg-primary hover:text-white transition-all duration-200 border border-primary/20">Clinic
+                        Location</button>
+                </div>
+            </div>
+
+            <!-- WhatsApp CTA / Input Area -->
+            <div class="p-3 bg-white dark:bg-surface-black border-t border-slate-100 dark:border-slate-800">
+                <a href="https://wa.me/919493596930?text=Hi,%20I%20want%20to%20book%20an%20appointment%20at%20Sri%20Sai%20Divya%20Dental%20Clinic"
+                    target="_blank"
+                    class="w-full mb-3 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#25D366]/10 text-[#25D366] font-semibold text-sm hover:bg-[#25D366] hover:text-white transition-all duration-300 border border-[#25D366]/30 interactive-hover">
+                    <i class="fab fa-whatsapp text-lg"></i> Continue on WhatsApp
+                </a>
+
+                <div class="relative flex items-center">
+                    <input type="text" id="chat-input" placeholder="Type your question..."
+                        class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full py-2 pl-4 pr-10 text-body text-surface-dark dark:text-surface-light focus:outline-none focus:border-primary transition-colors"
+                        onkeypress="if(event.key === 'Enter') sendChatMessage()">
+                    <button onclick="sendChatMessage()"
+                        class="absolute right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-accent transition-colors">
+                        <i class="fas fa-paper-plane text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Floating Orb Button -->
+        <button onclick="toggleChat()" id="chat-orb" class="relative group outline-none">
+            <!-- Pulsing outer glow -->
+            <div
+                class="absolute inset-0 rounded-full bg-accent blur-[20px] opacity-40 group-hover:opacity-70 group-hover:scale-150 transition-all duration-500 animate-[pulseGlow_3s_ease-in-out_infinite]">
+            </div>
+
+            <!-- Main Orb -->
+            <div
+                class="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent shadow-[0_10px_25px_rgba(14,165,233,0.5)] flex items-center justify-center text-white text-2xl border-2 border-white/20 transform group-hover:scale-105 transition-all duration-300">
+                <div id="orb-icon-1"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 group-hover:opacity-0 group-hover:scale-0 flex items-center justify-center">
+                    <i class="fas fa-tooth text-[28px] drop-shadow-md"></i>
+                    <i
+                        class="fas fa-sparkles absolute -top-1 -right-3 text-yellow-300 text-sm animate-[pulseGlow_2s_ease-in-out_infinite]"></i>
+                </div>
+                <i class="fas fa-times absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 scale-0 transition-all duration-300 text-lg"
+                    id="orb-icon-2"></i>
+            </div>
+
+            <!-- Notification Dot -->
+            <div class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-white dark:border-surface-dark"
+                id="chat-notif"></div>
+
+            <!-- Tooltip -->
+            <div class="absolute right-[120%] top-1/2 -translate-y-1/2 w-max bg-surface-dark dark:bg-white text-white dark:text-surface-dark text-xs font-semibold px-3 py-1.5 rounded-lg opacity-0 translate-x-4 pointer-events-none transition-all duration-500 shadow-lg"
+                id="chat-tooltip">
+                Need help choosing a treatment?
+                <div
+                    class="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-surface-dark dark:bg-white rotate-45">
+                </div>
+            </div>
+        </button>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
