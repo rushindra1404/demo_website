@@ -104,7 +104,7 @@ You must behave like a knowledgeable dental assistant, a helpful guide, and a tr
 
 All responses must be relevant, clear, safe, professional, and helpful.`;
 
-app.post('/api/chat', apiLimiter, async (req, res) => {
+app.post('*', apiLimiter, async (req, res) => {
     try {
         const userMessage = req.body.message;
         if (!userMessage || typeof userMessage !== 'string' || userMessage.trim().length === 0) {
