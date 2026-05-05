@@ -541,7 +541,19 @@ function sendChatMessage() {
         },
         body: JSON.stringify({ message: text })
     })
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok && res.status !== 500) {
+            throw new Error(`Server returned status: ${res.status}`);
+        }
+        return res.text();
+    })
+    .then(text => {
+        try {
+            return JSON.parse(text);
+        } catch (e) {
+            throw new Error('Invalid JSON response from server. Make sure the backend API is running.');
+        }
+    })
     .then(data => {
         const indicator = document.getElementById('typing-indicator');
         if (indicator) indicator.remove();
@@ -562,7 +574,13 @@ function sendChatMessage() {
         if (indicator) indicator.remove();
         
         const waMsg = encodeURIComponent('Hi, I have a question: ' + text);
-        addMessage(`Our assistant is temporarily unavailable. Please reach out to us directly — we're happy to help!<br><br>
+        let errorMsg = "Our assistant is temporarily unavailable.";
+        
+        if (error.message === 'Failed to fetch') {
+            errorMsg = "Unable to connect to the assistant backend. If you are running locally, please ensure the Node.js server is running (`npm start`).";
+        }
+        
+        addMessage(`${errorMsg} Please reach out to us directly — we're happy to help!<br><br>
         <a href="https://wa.me/919493596930?text=${waMsg}" target="_blank" class="inline-flex items-center mt-2 px-4 py-2 bg-[#25D366]/10 text-[#25D366] font-bold rounded-lg hover:bg-[#25D366] hover:text-white transition-colors border border-[#25D366]/30"><i class="fab fa-whatsapp mr-2 text-lg"></i> Chat on WhatsApp</a>`);
     });
 }
