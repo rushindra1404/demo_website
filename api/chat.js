@@ -172,7 +172,7 @@ app.post(['/api/chat', '/'], apiLimiter, async (req, res) => {
     } catch (error) {
         console.error("Gemini API Error:", error.message);
         res.status(500).json({ 
-            reply: "I encountered an error trying to process your request.", 
+            reply: "Our assistant is temporarily unavailable. Please reach out to us directly — we're happy to help!", 
             confidence: 0 
         });
     }
