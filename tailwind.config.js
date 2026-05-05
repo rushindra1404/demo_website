@@ -3,6 +3,10 @@ module.exports = {
   content: ["./index.html", "./main.js"],
   darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+    },
     extend: {
       fontFamily: {
           sans: ['Inter', 'sans-serif'],     // Primary
