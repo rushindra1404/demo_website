@@ -20,7 +20,7 @@ const apiLimiter = rateLimit({
 });
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
 // Local FAQ grounding (Hybrid Mode)
 const localFAQs = [
@@ -180,7 +180,7 @@ app.post(['/api/chat', '/'], apiLimiter, async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 if (!process.env.VERCEL) {
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
         console.log(`Server running on port ${PORT}`);
     });
 }
