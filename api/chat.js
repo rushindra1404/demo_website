@@ -1,12 +1,18 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
 app.use(cors());
-    app.use(express.json({ limit: '10kb' }));
+app.use(express.json({ limit: '10kb' }));
+
+// Serve static frontend files locally
+if (process.env.NODE_ENV !== 'production') {
+    app.use(express.static(path.join(__dirname, '..')));
+}
 // Rate limiter: max 10 requests per minute per IP
 const apiLimiter = rateLimit({
     windowMs: 60 * 1000,
@@ -104,7 +110,7 @@ You must behave like a knowledgeable dental assistant, a helpful guide, and a tr
 
 All responses must be relevant, clear, safe, professional, and helpful.`;
 
-app.post('*', apiLimiter, async (req, res) => {
+app.post(['/api/chat', '/'], apiLimiter, async (req, res) => {
     try {
         const userMessage = req.body.message;
         if (!userMessage || typeof userMessage !== 'string' || userMessage.trim().length === 0) {
