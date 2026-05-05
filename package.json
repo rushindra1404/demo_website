@@ -22,7 +22,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Static build done\""
+    "build": "echo \"Static build done\"",
+    "start": "node api/chat.js"
   },
   "keywords": [],
   "author": "",

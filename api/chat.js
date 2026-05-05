@@ -9,10 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '10kb' }));
 
-// Serve static frontend files locally
-if (process.env.NODE_ENV !== 'production') {
-    app.use(express.static(path.join(__dirname, '..')));
-}
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, '..')));
+
 // Rate limiter: max 10 requests per minute per IP
 const apiLimiter = rateLimit({
     windowMs: 60 * 1000,
@@ -180,7 +179,7 @@ app.post(['/api/chat', '/'], apiLimiter, async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-if (process.env.NODE_ENV !== 'production') {
+if (!process.env.VERCEL) {
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
     });
